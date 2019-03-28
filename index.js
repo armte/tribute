@@ -19,23 +19,6 @@ $(".quoteBox6").addClass("absent");
 $(".quoteBox7").addClass("absent");
 $(".quoteBox8").addClass("absent");
 
-quoteAssign();
-
-function quoteAssign(){
-  var boxNumber = 0;
-  for(i = 1; i <= 8; i++) {
-    if($("#quoteBox" + i).css('display') != 'none'){
-      if(quoteCount == 8){
-        quoteCount = 0;
-      }
-      boxNumber++;
-      $("#quoteBox"+i).html(quoteArr[quoteCount]);
-      quoteCount++;
-    }//end if
-  }//end for loop
-  quoteAnimate(boxNumber);
-}//end quoteAssign
-
 function quoteAnimate (quoteNum) {
   $("#quoteBox1").animate({opacity: 1}, 2000, function() {
     $("#quoteBox1").delay(3000).animate({opacity: 0}, 2000, function(){
@@ -80,3 +63,20 @@ function quoteAnimate (quoteNum) {
     });
   });
 }//end quoteAnimate;
+
+function quoteAssign(){
+  var boxNumber = 0;
+  for(i = 1; i <= 8; i++) {
+    if($("#quoteBox" + i).css('display') != 'none'){
+      if(quoteCount == 8){
+        quoteCount = 0;
+      }
+      boxNumber++;
+      $("#quoteBox"+i).html(quoteArr[quoteCount]);
+      quoteCount++;
+    }//end if
+  }//end for loop
+  quoteAnimate(boxNumber);
+}//end quoteAssign
+
+quoteAssign();
